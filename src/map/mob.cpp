@@ -2574,8 +2574,10 @@ int mob_dead(struct mob_data *md, struct block_list *src, int type)
 				per *= battle_config.pet_attack_exp_rate/100.;
 
 			if(battle_config.zeny_from_mobs && md->level) {
-				 // zeny calculation moblv + random moblv [Valaris]
-				zeny=(int) ((md->level+rnd()%md->level)*per*bonus/100.);
+				// zeny calculation moblv + random moblv [Valaris]
+				//zeny=(int) ((md->level+rnd()%md->level)*per*bonus/100.);
+				// zeny calculation (moblv + random moblv)*10 [Jobless]
+				zeny=(int) ((md->level+rnd()%md->level)*10*per*bonus/100.);
 				if(md->db->mexp > 0)
 					zeny*=rnd()%250;
 			}
