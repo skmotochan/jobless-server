@@ -1,0 +1,46 @@
+// Skill Times Database
+//
+// Structure of Database:
+// SkillID,CastingTime,AfterCastActDelay,AfterCastWalkDelay,Duration1,Duration2,Cool Down,Fixed Casting Time
+//
+// CastingTime: time to cast this skill, in miliseconds
+// AfterCastActDelay: "normal" delay, character cannot use skills, in miliseconds
+// AfterCastWalkDleay: amount of time before character can move again, in miliseconds
+// Duration1/Duration2: usually the durations used by the skill, at special cases it is used to hold special data
+// Cool Down: amount of time until character can re-use this skill, in miliseconds
+// Fixed Casting Time: the skills fixed casting time (when 0, uses 20% of cast time and less than 0 means no fixed cast time)
+//
+// On all fields you can use ':' as a delimiter for level-specific values.
+// For example:
+// - Original: 6,0,0,0,30000,0,1000
+// - Modified: 6,0,0,0,30000,0,1000:2500:3000:...
+// Gives Level 1 1000ms cool down, Level 2 2500ms, Level 3 3000ms, and so on.
+
+//===== Gunslinger =========================
+//-- GS_INCREASING
+506,0,1000,0,180000,0,0,0
+
+//===== Assassin Cross =====================
+//-- ASC_EDP
+378,0,2000,0,200000:225000:250000:275000:300000,100000:150000:200000:250000:300000,0,0
+
+//===== Sniper =============================
+//-- SN_SIGHT
+380,0,0,0,300000,0,0,0
+
+//===== Priest =============================
+//-- PR_GLORIA
+75,0,2000,0,30000:45000:60000:75000:90000,0,0,0
+
+//===== Rune Knight ========================
+//-- RK_LUXANIMA
+5005,0,0,0,180000,0,0,-1
+
+//===== Ranger =============================
+//-- RA_UNLIMIT
+5002,0,500,0,60000,0,120000,1000
+
+//===== Rebellion Skills ===================
+//-- RL_C_MARKER
+2560,0,0,0,300000,0,1000,-1
+

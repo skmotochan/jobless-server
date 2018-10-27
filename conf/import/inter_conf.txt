@@ -1,0 +1,32 @@
+party_share_level: 30
+
+login_server_id: jobless
+login_server_pw: rathena2018
+login_server_db: rathena
+//====================
+ipban_db_id: jobless
+ipban_db_pw: rathena2018
+ipban_db_db: rathena
+//====================
+char_server_id: jobless
+char_server_pw: rathena2018
+char_server_db: rathena
+//====================
+map_server_id: jobless
+map_server_pw: rathena2018
+map_server_db: rathena
+//====================
+log_db_id: jobless
+log_db_pw: rathena2018
+log_db_db: rathena
+
+
+//====================
+item_db_re_db: item_db_re
+item_db2_db: item_db2_re
+//====================
+mob_db_re_db: mob_db_re
+mob_db2_db: mob_db2_re
+//====================
+mob_skill_db_re_db: mob_skill_db_re
+mob_skill_db2_db: mob_skill_db2_re

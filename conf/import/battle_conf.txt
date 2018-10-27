@@ -1,0 +1,146 @@
+//====================battle====================
+
+//====================battleground====================
+
+//====================client====================
+area_size: 26
+max_walk_path: 26
+display_version: no
+
+min_hair_style: 0
+max_hair_style: 27
+min_hair_color: 0
+max_hair_color: 8
+min_cloth_color: 0 
+max_cloth_color: 3
+min_body_style: 0
+max_body_style: 1
+
+//====================drops====================
+// The rate the common items are dropped (Items that are in the ETC tab, besides card)
+item_rate_common: 20000
+item_rate_common_boss: 20000
+item_rate_common_mvp: 20000
+item_drop_common_min: 1
+item_drop_common_max: 10000
+
+// The rate healing items are dropped (items that restore HP or SP)
+item_rate_heal: 20000
+item_rate_heal_boss: 20000
+item_rate_heal_mvp: 20000
+item_drop_heal_min: 1
+item_drop_heal_max: 10000
+
+// The rate at which usable items (in the item tab) other then healing items are dropped.
+item_rate_use: 20000
+item_rate_use_boss: 20000
+item_rate_use_mvp: 20000
+item_drop_use_min: 1
+item_drop_use_max: 10000
+
+// The rate at which equipment is dropped.
+item_rate_equip: 20000
+item_rate_equip_boss: 20000
+item_rate_equip_mvp: 20000
+item_drop_equip_min: 1
+item_drop_equip_max: 10000
+
+// The rate at which cards are dropped
+item_rate_card: 20000
+item_rate_card_boss: 20000
+item_rate_card_mvp: 20000
+item_drop_card_min: 1
+item_drop_card_max: 10000
+
+// The rate adjustment for the MVP items that the MVP gets directly in their inventory
+// Mode: 0 - official order, 1 - random order, 2 - all items
+item_rate_mvp: 20000
+item_drop_mvp_min: 1
+item_drop_mvp_max: 10000
+item_drop_mvp_mode: 0
+
+// The rate adjustment for card-granted item drops.
+item_rate_adddrop: 20000
+item_drop_add_min: 1
+item_drop_add_max: 10000
+
+// Rate adjustment for Treasure Box drops (these override all other modifiers)
+item_rate_treasure: 20000
+item_drop_treasure_min: 1
+item_drop_treasure_max: 10000
+
+item_logarithmic_drops: yes
+
+drops_by_luk: 0
+drops_by_luk2: 20
+finding_ore_rate: 100
+
+//====================exp====================
+base_exp_rate: 100000
+job_exp_rate: 100000
+multi_level_up: yes
+exp_bonus_attacker: 100
+exp_bonus_max_attacker: 12
+mvp_exp_rate: 100000
+quest_exp_rate: 100000
+pvp_exp: yes
+death_penalty_type: 0
+
+//====================feature====================
+
+//====================gm====================
+
+//====================guild====================
+guild_exp_limit: 99
+castle_defense_rate: 100
+gvg_short_attack_damage_rate: 80
+gvg_long_attack_damage_rate: 80
+gvg_weapon_attack_damage_rate: 60
+gvg_magic_attack_damage_rate: 60
+gvg_misc_attack_damage_rate: 60
+gvg_flee_penalty: 0
+guild_leaderchange_delay: 0
+
+//====================homunc====================
+homunculus_friendly_rate: 500
+hom_rename: yes
+homunculus_autoloot: yes
+
+//====================items====================
+vending_tax: 200
+weapon_produce_rate: 500
+potion_produce_rate: 500
+
+//====================misc====================
+day_duration: 0
+night_duration: 0
+
+//====================monster====================
+mvp_hp_rate: 100
+monster_hp_rate: 100
+show_mob_info: 0
+zeny_from_mobs: yes
+boss_spawn_delay: 50
+
+//====================party====================
+party_hp_mode: 0
+party_even_share_bonus: 100
+
+//====================pet====================
+pet_catch_rate: 500
+pet_rename: yes
+pet_friendly_rate: 500
+pet_hungry_delay_rate: 100
+pet_hungry_friendly_decrease: 5
+pet_attack_support: yes
+pet_damage_support: yes
+pet_status_support: yes
+pet_attack_exp_to_master: yes
+
+//====================player====================
+restart_hp_rate: 100
+restart_sp_rate: 100
+
+//====================skill====================
+
+//====================status====================

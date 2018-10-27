@@ -1,0 +1,59 @@
+// Skill Requirements Database
+//
+// Structure of Database:
+// SkillID,HPCost,MaxHPTrigger,SPCost,HPRateCost,SPRateCost,ZenyCost,RequiredWeapons,RequiredAmmoTypes,RequiredAmmoAmount,RequiredState,RequiredStatuses,SpiritSphereCost,RequiredItemID1,RequiredItemAmount1,RequiredItemID2,RequiredItemAmount2,RequiredItemID3,RequiredItemAmount3,RequiredItemID4,RequiredItemAmount4,RequiredItemID5,RequiredItemAmount5,RequiredItemID6,RequiredItemAmount6,RequiredItemID7,RequiredItemAmount7,RequiredItemID8,RequiredItemAmount8,RequiredItemID9,RequiredItemAmount9,RequiredItemID10,RequiredItemAmount10,RequiredEquipment
+//
+// If HP/SPratecost is positive, it is a percent of your current life, otherwise it is a percent of your max life.
+//
+// Legend for 'RequiredState' field:
+//  none = Nothing special
+//  hidden = Requires on hidden status by using Hiding, Cloaking, or maybe Chasewalk
+//  riding = Requires to ride either a peco or a dragon
+//  falcon = Requires a Falcon
+//  cart = Requires a Pushcart (for renewal can replace this state by SC_PUSH_CART in 'RequiredStatuses' field)
+//  shield = Requires a 0,shield equipped
+//  recover_weight_rate = Requires to be less than 50% weight
+//  move_enable = Requires to be able to move
+//  water = Requires to be standing on a water cell
+//  dragon = Requires to ride a Dragon
+//  warg = Requires a Warg
+//  ridingwarg = Requires to ride a Warg
+//  mado = Requires to have an active mado
+//  elementalspirit = Requires to have an Elemental Spirit summoned.
+//  peco = Requires riding a peco
+//
+// 'RequiredStatuses'
+//	Fill the value only with SC_STATUS (see db/const.txt for more details)
+//	Usage for multiple status requirements: SC_STATUS1:SC_STATUS2:SC_STATUS3
+//	Max. multiple value is 3 (skill.h: MAX_SKILL_STATUS_REQUIRE)
+//	Use any number or SC_ALL will disable status requirements
+// 'RequiredEquipment'
+//	Specified equipment to be equipped. For multiple values, use : as delimiter.
+//	Max. multiple value is 10 (skill.h: MAX_SKILL_EQUIP_REQUIRE)
+
+//****
+// MC Merchant
+42,0,0,40,0,0,10:20:30:40:50:60:70:80:90:100,99,0,0,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0	//MC_MAMMONITE
+
+//****
+// GS Gunslinger
+506,0,0,90,0,0,0,99,0,0,none,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0								//GS_INCREASING
+
+//****
+// ASC Assassin Cross
+378,0,0,180:210:240:270:300,0,0,0,99,0,0,none,0,0,678,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0				//ASC_EDP
+
+//****
+// SN Sniper
+380,0,0,200:200:250:250:300:300:350:350:400:400,0,0,0,99,0,0,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0	//SN_SIGHT
+
+//****
+// PR Priest
+75,0,0,60,0,0,0,99,0,0,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0								//PR_GLORIA
+
+// EP 14.3 Part 2 3rd Job Skills
+5002,0,0,200:240:280:320:360,0,0,0,99,0,0,none,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0			//RA_UNLIMIT
+
+//****
+// Rebellion
+2560,0,0,100,0,0,0,17:18:19:20:21,0,0,none,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0					//RL_C_MARKER

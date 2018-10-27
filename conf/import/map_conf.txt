@@ -1,0 +1,10 @@
+userid: jobless
+passwd: rathena2018
+//====================
+char_ip: 127.0.0.1
+map_ip: 128.199.132.233
+
+//====================
+map: payo2
+map: pa2_in01
+map: pa2_in02

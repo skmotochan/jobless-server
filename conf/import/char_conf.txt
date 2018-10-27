@@ -1,0 +1,25 @@
+userid: jobless
+passwd: rathena2018
+//====================
+server_name: Jobless RO
+wisp_server_name: jobless
+login_ip: 127.0.0.1
+char_ip: 128.199.132.233
+//====================
+char_name_letters: abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'space'
+char_del_delay: 0
+char_del_option: 2
+char_del_restriction: 0
+//====================
+pincode_enabled: no
+//====================
+start_point: payo2,90,123
+start_point_doram: payo2,90,105
+start_items: 1201,1,2:2301,1,16:11567,50,0:12323,10,0:12900,1,0
+start_items_doram: 1681,1,2:2301,1,16
+start_zeny: 0
+guild_exp_rate: 100
+
+default_map: payo2
+default_map_x: 90
+default_map_y: 105
