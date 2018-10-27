@@ -1,0 +1,519 @@
+//===== rAthena Script =======================================
+//= Mystical Fountain
+//===== By: ==================================================
+//= RainZ
+//===== Special Thanks: ======================================
+//= XTrincX (GM-Twillight from Soul RO)
+//===== Current Version: =====================================
+//= 1.2
+//===== Compatible With: =====================================
+//= rAthena SVN
+//===== Description: =========================================
+//= AoE Healing Aura
+//============================================================
+//= Updates
+//
+// -1.1
+// Increase AoE to 56x56 from 30x30
+// Healing effect now heals every 0.2 second instead of 0.5 second.
+// Relocate healing aura npc to the centre point of prontera's fountain
+// Increase timer for Special effect to play every 1 minute instead of 30 second.
+// Increase agi buff (level 1) now rebuffs every 0.2 second that last for 0.3 second
+// Now also removes bad status alignments upon entering effective area (might missing some)
+
+// -1.2
+// Changed the AoE effect from 56x56 to 64x56
+// Removed passive lv 1 Increase AGI to avoid msg spam on "Speed has been increased/decreased"
+// Changed name to Mystical Fountain
+// Revert healing effect to 0.5 second because of memory leak issue.
+// Increase Aura healing percentage from 1/1 to 3/3
+// Added msg to Mystical Fountain for players who click on it
+// All other town's fountain is disabled by default (only prontera's active by default)
+// Added Settings for turning on and off for the special effect and Duration timer for the Aura buffs
+// Added Delay for the recovery msg to display in order to avoid msg spams from going in and out of the area.
+// Added unfinished manager and the base aura buff settings.
+
+// -1.3
+// Changed duplicates name from Mystical Fountain to Mystical Aura (Makes more sence because most other towns doesn't have fountain)
+// Re-enabled (Level 3) passive Blessing and Increase AGI that last for 10 minutes(default) for new players who doesn't have enough money to get buffs.
+// Manager is 90% complete with no offerings check.
+
+// -1.4
+// Completed Manager with offering and lucky draw reward system.
+// ---Now players can offer zenys to gain extra benifits (buffs) for an hour.
+// ---Added reward system so people do actually feel benifits to pays offering, newbie or veterans alike.
+// Refine (compile) scripts into a shorter and smaller file, reduce repeating lines.
+// Changed normal healing effect to 12% per second while boosted healing effect to 40% per second.
+// Added imcomplete base countdown time banner (No idea how to write it, thus it was disabled for now.)
+
+// -1.5
+// Fix a bug where the the npc automatically de-select the offerings back to 0.
+// Re-refined manager msg to a much fluent/shorter format.
+// Re-refined certain message with colour codes.
+// Now buff selection menu also displays the estimate amouont of zeny depend on selected offering.
+// Now offering selection displays dynamic figure. (figure can be set on settings)
+// Refined healer effect aura shorter in lines.
+// Now check if the player did selected some offering before confirmation or not. (will proc a msg to confirm if the player wants to cancel the option or not.)
+// Now npc name on display window are colour coded.
+// Codes now use both Donpcevent & Callfunction hybrid.
+
+//=====================================================================================================================
+
+
+
+// Healing Aura Angel=====================================================================================
+
+prontera,155,203,4	script	Mystical Fountain#prt	111,{
+	mes "You starring at the Mysterious Aura emitting from it, feel a strong breeze, it refreshes your mind.";
+	end;
+	
+	
+OnInit:
+//=======================================================
+// You can also disable this if you don't want the special effect to play, it'll get annoying after awhile lol.
+.@on = 1; //Set this to 0 to turn it off
+
+//======================================================
+if(.@on){
+OnTimer60000: //Timer for this npc to apply specialeffects, default timer is 60000 (1 minute)
+	initnpctimer;
+	specialeffect 76;
+	specialeffect 83;
+	end;
+}
+
+}
+
+//alberta,36,244,5	duplicate(Mystical Fountain#prt)	Mystical Aura#alb1	111
+//aldebaran,135,125,5	duplicate(Mystical Fountain#prt)	Mystical Aura#alde1	111
+//amatsu,200,80,5	duplicate(Mystical Fountain#prt)	Mystical Aura#ama1	111
+//ayothaya,155,111,5	duplicate(Mystical Fountain#prt)	Mystical Aura#ayo1	111
+//comodo,188,162,5	duplicate(Mystical Fountain#prt)	Mystical Aura#com1	111
+//geffen,120,66,5	duplicate(Mystical Fountain#prt)	Mystical Aura#gef1	111
+//gonryun,164,130,5	duplicate(Mystical Fountain#prt)	Mystical Aura#gon1	111
+//izlude,125,118,5	duplicate(Mystical Fountain#prt)	Mystical Aura#izl1	111
+//louyang,225,103,5	duplicate(Mystical Fountain#prt)	Mystical Aura#lou1	111
+//morocc,159,96,5	duplicate(Mystical Fountain#prt)	Mystical Aura#mor1	111
+//niflheim,188,180,5	duplicate(Mystical Fountain#prt)	Mystical Aura#nif1	111
+//payon,180,105,5	duplicate(Mystical Fountain#prt)	Mystical Aura#pay1	111
+//umbala,94,162,5	duplicate(Mystical Fountain#prt)	Mystical Aura#umb1	111
+//xmas,149,136,5	duplicate(Mystical Fountain#prt)	Mystical Aura#xmas1	111
+//yuno,152,186,5	duplicate(Mystical Fountain#prt)	Mystical Aura#yuno1	111
+//mid_camp,210,283,5	duplicate(Mystical Fountain#prt)	Mystical Aura#mid1	111
+
+
+
+// Healing Aura Effect =======================================================================================
+
+prontera,155,203,4	script	HealingFountain	-1,32,28,{ //this is the radius of the npc "not diameter" so 28 means 28 steps (box) away from npc
+
+
+	OnTouch:
+		sc_end SC_STONE;
+		sc_end SC_SLOWDOWN;
+		sc_end SC_FREEZE;
+		sc_end SC_SLEEP;
+		sc_end SC_CURSE;
+		sc_end SC_SILENCE;
+		sc_end SC_CONFUSION;
+		sc_end SC_BLIND;
+		sc_end SC_BLEEDING;
+		sc_end SC_DECREASEAGI;
+		sc_end SC_POISON;
+		sc_end SC_HALLUCINATION;
+		sc_end SC_STRIPWEAPON;
+		sc_end SC_STRIPARMOR;
+		sc_end SC_STRIPHELM;
+		sc_end SC_STRIPSHIELD;
+		sc_end SC_CHANGEUNDEAD;
+		sc_end SC_ORCISH;
+		sc_end SC_BERSERK;
+		sc_end SC_SKE;
+		sc_end SC_SWOO;
+		sc_end SC_SKA;
+		sc_end SC_BURNING;
+		sc_end SC_FREEZING;
+		sc_end SC_FEAR;
+		specialeffect2 EF_RECOVERY;
+		sc_start SC_BLESSING,.@duration,3;
+		sc_start SC_INCREASEAGI,.@duration,3;
+		if (@lastTick < gettimetick(2)) {
+			set @lastTick, (gettimetick(2) + .delay * 60);
+		dispbottom "^99CC66The Bad status alignments and Your HP and SP is rapidly recovering due to present of fountain nearby.";
+		}
+		if(.@boost){
+			if(.@blessing) {
+			specialeffect2 EF_BLESSING;
+			sc_start SC_BLESSING,.@duration,10;
+			}
+			if(.@agi) {
+			specialeffect2 EF_INCAGILITY;
+			sc_start SC_INCREASEAGI,.@duration,10;
+			}
+			if(.@assumptio) {
+			specialeffect2 EF_ASSUMPTIO;
+			sc_start SC_ASSUMPTIO,.@duration,5;
+			}
+			if(.@angelus) {
+			specialeffect2 EF_ANGELUS;
+			sc_start SC_ANGELUS,.@duration,10;
+			}
+			if(.@Magnificat) {
+			specialeffect2 EF_MAGNIFICAT;
+			sc_start SC_MAGNIFICAT,.@duration,5;
+			}
+		}
+		end;
+//=============================================================================
+OnAuraOff:
+		callfunc "Disablesetting001";	
+		end;
+		
+OnBoostOn:
+		set .@boost, 1;
+		end;
+	
+OnHealOn:
+		set .@healboost, 1;
+		end;
+
+OnBlessOn:
+		set .@blessing, 1;
+		end;
+
+OnAgiOn:
+		set .@agi, 1;
+		end;
+		
+OnAssumOn:
+		set .@assumptio, 1;
+		end;
+		
+OnMagniOn:
+		set .@magnificat, 1;
+		end;
+		
+OnAngelusOn:
+		set .@angelus, 1;
+		end;
+		
+//=========================================================================	
+OnInit:
+//=========Setting==============================
+
+		set .@timeset, 10;	//Set this for how long does the buff last on the user (In Minutes)
+		set .delay, 5; // delay in minutes
+		set .@buffer, 1;//
+		set .@duration, 60000*.@timeset; //Do not touch this
+		
+	/*	
+		set .timer_refresh_rate, 500;	//how many ms per timer refresh...keep less than 1000 (in milliseconds)
+		set .change_state_sleep, 3000;
+		set .banner_refresh_rate, 10;	//how many seconds per banner refresh...keep 1 or above (in seconds)
+		*/
+		
+	
+//==============================================
+
+
+OnTimer500: //Timer to re-run this script 500 = 0.5 second.(Do not set lower than 500 as it may cause memory leak / lag to clients due to the mass area healing code)
+	initnpctimer;
+	getmapxy(.@m$,.@x,.@y,1,strnpcinfo(0));
+	if(.@boost) && (.@healboost) {
+		areapercentheal .@m$,.@x-32,.@y-28,.@x+32,.@y+28,20,20; //you can customize how large the AoE of the zone and the healing amount (minimum 1% last time)
+	}
+	else {	
+		areapercentheal .@m$,.@x-32,.@y-28,.@x+32,.@y+28,6,6; //The passive non boosted AoE healing amount. (cannot go below 1%)		
+	}
+end;
+}
+
+//alberta,36,244,5	duplicate(HealingFountain)	Mystical Fountain#alb	-1,32,28
+//aldebaran,135,125,5	duplicate(HealingFountain)	Mystical Fountain#alde	-1,32,28
+//amatsu,200,80,5	duplicate(HealingFountain)	Mystical Fountain#ama	-1,32,28
+//ayothaya,155,111,5	duplicate(HealingFountain)	Mystical Fountain#ayo	-1,32,28
+//comodo,188,162,5	duplicate(HealingFountain)	Mystical Fountain#com	-1,32,28
+//geffen,120,66,5	duplicate(HealingFountain)	Mystical Fountain#gef	-1,32,28
+//gonryun,164,130,5	duplicate(HealingFountain)	Mystical Fountain#gon	-1,32,28
+//izlude,125,118,5	duplicate(HealingFountain)	Mystical Fountain#izl	-1,32,28
+//louyang,225,103,5	duplicate(HealingFountain)	Mystical Fountain#lou	-1,32,28
+//morocc,159,96,5	duplicate(HealingFountain)	Mystical Fountain#mor	-1,32,28
+//niflheim,188,180,5	duplicate(HealingFountain)	Mystical Fountain#nif	-1,32,28
+//payon,180,105,5	duplicate(HealingFountain)	Mystical Fountain#pay	-1,32,28
+//umbala,94,162,5	duplicate(HealingFountain)	Mystical Fountain#umb	-1,32,28
+//xmas,149,136,5	duplicate(HealingFountain)	Mystical Fountain#xmas	-1,32,28
+//yuno,152,186,5	duplicate(HealingFountain)	Mystical Fountain#yuno	-1,32,28
+//mid_camp,210,283,5	duplicate(HealingFountain)	Mystical Fountain#mid	-1,32,28
+
+
+// Healing Aura Manager ========================================================================================
+
+prontera,152,196,4	script	Fountain Priest	101,{
+
+
+	if(.@boost == 1){
+		mes "^FF00CC[Fountain Priest]^000000";
+		mes "The following Auras is in effect.^0099CC";
+		if(.@healboost == 1) mes "Healing Boost.";
+		if(.@blessing == 1) mes "Blessing.";
+		if(.@agi == 1) mes "Increase Agi.";
+		if(.@assumptio == 1) mes "Assumptio.";
+		if(.@magnificat == 1) mes "Magnificat.";
+		if(.@Angelus == 1) mes "Angelus.";
+		close;
+	}
+	else;{
+	OnMenu:
+	mes "^FF00CC[Fountain Priest]^000000";
+	mes "I am here to manage the donation for the fountain.";
+	mes "What can I do for you today";
+	switch(select("I would like to give offering to the fountain:What is this?:What does offerings do?:Cancel")) {
+		case 1:
+			callfunc	"Disablesetting001";	//These are here incase people cancel the menu selection pre-maturelly.
+			goto OnNewBuff;
+			end;
+		case 2:
+			mes "^FF00CC[Fountain Priest]^000000";
+			mes "This is the fountain of the gods, that has appeared for us adventurers to heal our body and minds.";
+			next;
+			mes "^FF00CC[Fountain Priest]^000000";
+			mes "If you wish, you could also gives offering to the fountain for gods to grants us even powerful aura.";
+			next;
+			goto OnMenu;
+			end;
+		case 3:
+			mes "[Fountains Priest]";
+			mes "Offerings given to the fountain will grant us a powerful blessings from god.";
+			next;
+			mes "^FF00CC[Fountain Priest]^000000";
+			mes "In addition, players who gave offerings will receive a mysterious reward(s) depending on number of offerings.";
+			mes "And have their name announce to the world for doing so.";
+			next;
+			goto OnMenu;
+			end;
+		case 4:
+			close;
+		}
+	end;
+	}
+end;
+
+OnInit:
+/*		while (1) {
+			set .remainTime, gettimetick(1);
+			set .bannerTimer, .remainTime - (.remainTime % .banner_refresh_rate) + .banner_refresh_rate;
+			set .min, .bannerTimer / 60;
+			set .sec, .bannerTimer - .min * 60;
+			set .hr, .min / 60;
+			set .min, .min - .hr * 60;
+			set .roomMsg$, .waitMsg$[.state] + .hr + ":" + ((.min < 10 )?"0":"") + .min + ":" + ((.sec < 10 )?"0":"") + .sec;
+			sleep .timer_refresh_rate;
+			}
+		while (2) {
+			//only updates if msg is different
+			set .banner$, getwaitingroomstate(4, strnpcinfo(3));
+			if(getvariableofnpc(.roomMsg$, "Fountain Keeper") != .banner$) {
+				delwaitingroom;
+				waitingroom getvariableofnpc(.roomMsg$, "Fountain Keeper"), 0;
+			}
+			sleep 500;
+		}
+	*/	
+OnTimer3600000: //Here to set the duration of the aura effect on fountain.
+	set .@boost, 0; //Do not touch these, these are switch to turn off everyone when the server booted itself and when the time is up
+		callfunc "Disablesetting001";
+		donpcevent	"HealingFountain::OnAuraOff";
+	stopnpctimer;
+	announce "The fountain's blessing from god has been depleted.",bc_blue;
+	end;
+	
+OnNewBuff:
+// Offering Cost=====================================================================
+		set .healcost, 50000; // offering costs (in zeny)
+        set .blesscost, 30000;
+        set .agicost, 30000;
+        set .assumcost, 20000;
+        set .magnicost, 10000;
+        set .angeluscost, 10000;
+//===================================================================================
+	next;
+	mes "^FF00CC[Fountain Priest]^000000";
+	mes "You can select multiple offering before the final confirmation.";
+	mes "The following buff selected listed below:-^0099CC";
+		set .amount, 0;
+		if(.@healboost == 1) mes "Healing Boost.";
+		if(.@blessing == 1) mes "Blessing.";
+		if(.@agi == 1) mes "Increase Agi.";
+		if(.@assumptio == 1) mes "Assumptio.";
+		if(.@magnificat == 1) mes "Magnificat.";
+		if(.@Angelus == 1) mes "Angelus.";
+			if(.@healboost == 1) set .healcost2, .healcost;
+			if(.@blessing == 1) set .blesscost2, .blesscost;
+			if(.@agi == 1) set .agicost2, .agicost;
+			if(.@assumptio == 1) set .assumcost2, .assumcost;
+			if(.@magnificat == 1) set .magnicost2, .magnicost;
+			if(.@Angelus == 1) set .angeluscost2, .angeluscost;
+			set .amount, .healcost2 + .blesscost2 + .agicost2 + .assumcost2 + .magnicost2 + .angeluscost2;
+		if(.amount > 0) mes "^000000The total amount would be ^0033FF"+.amount+" ^CC3300zeny. ^000000";
+	switch(select("Healing Boost^00FFFF["+.healcost+" zeny]^000000:Blessing^00FFFF["+.blesscost+" zeny]^000000:Increase Agility^00FFFF["+.agicost+" zeny]^000000:Assumptio^00FFFF["+.assumcost+" zeny]^000000:Magnificat^00FFFF["+.magnicost+" zeny]^000000:Angelus^00FFFF["+.angeluscost+" zeny]^000000:Confirmation:Cancel")){
+		case 1:
+			if(.@healboost == 1){
+				set .@healboost, 0;
+				}
+				else {
+				set .@healboost, 1;
+				}
+			goto OnNewBuff;
+			end;
+		case 2:
+			if(.@blessing == 1){
+				set .@blessing, 0;
+				}
+				else {
+				set .@blessing, 1;
+				}
+			goto OnNewBuff;
+			end;
+		case 3:
+			if(.@agi == 1){
+				set .@agi, 0;
+				}
+				else {
+				set .@agi, 1;
+				}
+			goto OnNewBuff;
+			end;
+		case 4:
+			if(.@assumptio == 1){
+				set .@assumptio, 0;
+				}
+				else {
+				set .@assumptio, 1;
+				}
+			goto OnNewBuff;
+			end;
+		case 5:
+			if(.@magnificat == 1){
+				set .@magnificat, 0;
+				}
+				else {
+				set .@magnificat, 1;
+				}
+			goto OnNewBuff;
+			end;
+		case 6:
+			if(.@Angelus == 1){
+				set .@Angelus, 0;
+				}
+				else {
+				set .@Angelus, 1;
+				}
+			goto OnNewBuff;
+			end;
+		case 7:
+			if (.amount == 0) {
+				mes "^FF00CC[Fountain Priest]^000000";
+				mes "You did not select any buffs, are you sure about canceling the services?";
+				switch(select("No:Yes")) {
+				case 1:
+					goto OnNewBuff;
+					end;
+				case 2:
+					mes "^FF00CC[Fountain Priest]^000000";
+					mes "Please do come back if you changed your mind.";
+						callfunc "Disablesetting001";	
+					close;
+				end;
+				}
+			}
+			else {
+				mes "^FF00CC[Fountain Priest]^000000";
+				mes ".............";
+				next;
+				mes "^FF00CC[Fountain Priest]^000000";
+				mes "The total amount would be ^0033FF"+.amount+" ^CC3300zeny. ^000000";
+				mes "Would you like to proceed?";
+				switch(select("Yes please.:No thank you.")){
+					case 1:
+						if(.amount > Zeny){
+							mes "^FF00CC[Fountain Priest]^000000";
+							mes "It seems you do not have enough Zeny for the offering.";
+							next;
+							mes "^FF00CC[Fountain Priest]^000000";
+							mes "Please do come back when you have enough.";
+								callfunc "Disablesetting001";	
+							close;
+						end;
+						}
+						else {
+							Zeny -= .amount;
+							set .@boost, 1;
+							dispbottom "^99CC66You have thrown ^0033FF"+.amount+" zeny ^99CC66into the fountain, the fountain now emitting an invisible aura.";
+							next;
+							initnpctimer;;
+								if(.@boost == 1)	donpcevent	"HealingFountain::OnBoostOn";
+								if(.@healboost == 1)	donpcevent	"HealingFountain::OnHealOn";
+								if(.@blessing == 1)	donpcevent	"HealingFountain::OnBlessOn";
+								if(.@agi == 1)	donpcevent	"HealingFountain::OnAgiOn";
+								if(.@assumptio == 1)	donpcevent	"HealingFountain::OnAssumOn";
+								if(.@magnificat == 1)	donpcevent	"HealingFountain::OnMagniOn";
+								if(.@Angelus == 1)	donpcevent	"HealingFountain::OnAngelusOn";
+							announce "^The kind hearted ^66FF66["+ strcharinfo(0) +"] ^0000FFhave paid his offering to the fountain.",bc_blue;
+							announce "The fountain have received the blessing from god for a limited time.",bc_blue;
+							mes "^FF00CC[Fountain Priest]^000000";
+							mes "The Fountain has received it's offering.";
+							mes "Thank you for your kindness, everyone shall know your kind deeds in this world.";
+							next;
+							dispbottom "^99CC66Something just appeared into your pocket, you went and check it out.";
+								if(.@healboost) callfunc "FountainLuckyDraw001";
+								if(.@blessing) callfunc "FountainLuckyDraw001";	
+								if(.@agi) callfunc "FountainLuckyDraw001";	
+								if(.@assumptio) callfunc "FountainLuckyDraw001";	
+								if(.@magnificat) callfunc "FountainLuckyDraw001";	
+								if(.@Angelus) callfunc "FountainLuckyDraw001";	
+								if(.@drawcount = 0) dispbottom "^99CC66You checked ur pocket and did not find anything in it, guess it's just your imagination.";
+							close;
+						end;
+						}
+					case 2:
+						mes "^FF00CC[Fountain Priest]^000000";
+						mes "Please do come back if you changed your mind.";
+							callfunc "Disablesetting001";	
+						close;
+					end;
+				}
+			}
+		case 8:
+			mes "^FF00CC[Fountain Priest]^000000";
+			mes "As you wish.";
+				callfunc "Disablesetting001";	
+			close;
+		end;
+	}
+
+	}
+// Reward lucky draw system, you can change this into anything you want.
+function	script	FountainLuckyDraw001	{
+set .@luckydraw1,rand(100);
+		if(.@luckydraw1 <= 10) {getitem 6480,1; set .@drawcouont,1;} //Event coin ( 10% chance )
+		if(.@luckydraw1 >= 70) {getitem 12405,1; set .@drawcouont,1;} //unripped yggseed (recovers 30% hp & sp, and cast lvl 3 blessing on the user (30% chance)
+	return;	// Return to script
+}
+
+function	script	Disablesetting001	{ //This is for disabling settings (change them back to 0) to avoid having script messed up.
+			set .@boost, 0;
+			set .@healboost, 0;
+			set .@blessing, 0;
+			set .@agi, 0;
+			set .@assumptio, 0;
+			set .@magnificat, 0;
+			set .@Angelus, 0;
+			set .healcost2, 0;
+			set .blesscost2, 0;
+			set .agicost2, 0;
+			set .assumcost2, 0;
+			set .magnicost2, 0;
+			set .angeluscost2, 0;
+			return;
+			
+}
