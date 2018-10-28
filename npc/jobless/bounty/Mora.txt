@@ -18,7 +18,7 @@
 //=			MonsterID, 		QuestID, 	BaseExp, 	JobExp};
 //============================================================
 
-pa2_in01,31,99,3	script	Bounty Board Mor 141#mo1	837,{
+pa2_in01,31,99,3	script	Bounty Mora 141#mo1	837,{
 	callfunc "F_Bounty_Board", 141, 0, 1, 4,
 		2137,	62821,		798750,		708750,	// MIMING
 		2136,	62822,		843750,		731250,	// LITTLE_FATUM

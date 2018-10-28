@@ -18,7 +18,7 @@
 //=			MonsterID, 		QuestID, 	BaseExp, 	JobExp};
 //============================================================
 
-pa2_in01,27,97,0	script	Bounty Board Dic 101-140#dc1	837,{
+pa2_in01,27,97,0	script	Bounty Dicastes 101-140#dc1	837,{
 	callfunc "F_Bounty_Board", 101, 140, 12, 2,
 		1987,	62613,		360112,		304987,	// CENTIPEDE
 		1999,	62614,		329625,		225225,	// CENTIPEDE_LARVA
@@ -27,7 +27,7 @@ pa2_in01,27,97,0	script	Bounty Board Dic 101-140#dc1	837,{
 	end;
 }
 
-pa2_in01,29,97,0	script	Bounty Board Dic 120-175#dc2	837,{
+pa2_in01,29,97,0	script	Bounty Dicastes 120-175#dc2	837,{
 	callfunc "F_Bounty_Board", 120, 0, 12, 2,
 		2085,	62802,		712125,		591187,	// ANTLER_SCARABA
 		2084,	62803,		650250,		511762,	// HORN_SCARABA2

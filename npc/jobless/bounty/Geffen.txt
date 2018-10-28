@@ -18,7 +18,7 @@
 //=			MonsterID, 		QuestID, 	BaseExp, 	JobExp};
 //============================================================
 
-pa2_in01,23,181,3	script	Bounty Board Gef 1-20#gf1	837,{
+pa2_in01,23,181,3	script	Bounty Geffen 1-20#gf1	837,{
 	callfunc "F_Bounty_Board", 1, 20, 1, 1,
 		1011,	62660,	 4950,		 4050,	// CHONCHON
 		1012,	62661,	10125,		 7650,	// RODA_FROG
@@ -27,7 +27,7 @@ pa2_in01,23,181,3	script	Bounty Board Gef 1-20#gf1	837,{
 	end;
 }
 
-pa2_in01,25,181,3	script	Bounty Board Gef 21-50#gf2	837,{
+pa2_in01,25,181,3	script	Bounty Geffen 21-50#gf2	837,{
 	callfunc "F_Bounty_Board", 21, 50, 2, 1,
 		1018,	62664,	16200,		18225,	// CREAMY
 		1103,	62665,	18225,		20475,	// CARAMEL
@@ -40,7 +40,7 @@ pa2_in01,25,181,3	script	Bounty Board Gef 21-50#gf2	837,{
 	end;
 }
 
-pa2_in01,27,181,3	script	Bounty Board Gef 41-75#gf3	837,{
+pa2_in01,27,181,3	script	Bounty Geffen 41-75#gf3	837,{
 	callfunc "F_Bounty_Board", 41, 75, 2, 1,
 		1023,	62668,	39375,		60750,	// ORK_WARRIOR
 		1273,	62669,	42750,		48825,	// ORC_LADY
@@ -50,7 +50,7 @@ pa2_in01,27,181,3	script	Bounty Board Gef 41-75#gf3	837,{
 	end;
 }
 
-pa2_in01,29,181,3	script	Bounty Board Gef 61-100#gf4	837,{
+pa2_in01,29,181,3	script	Bounty Geffen 61-100#gf4	837,{
 	callfunc "F_Bounty_Board", 61, 100, 2, 1,
 		1036,	62672,	65475,		 73800,	// GHOUL
 		1130,	62673,	71100,		 79875,	// JAKK
@@ -58,7 +58,7 @@ pa2_in01,29,181,3	script	Bounty Board Gef 61-100#gf4	837,{
 	end;
 }
 
-pa2_in01,74,79,3	script	Bounty Board Gef 81-120#gf5	837,{
+pa2_in01,74,79,3	script	Bounty Geffen 81-120#gf5	837,{
 	callfunc "F_Bounty_Board", 81, 120, 2, 1,
 		1109,	62675,	203175,		243675,	// DEVIRUCHI
 		1143,	62676,	162225,		225900,	// MARIONETTE
@@ -72,7 +72,7 @@ pa2_in01,74,79,3	script	Bounty Board Gef 81-120#gf5	837,{
 	end;
 }
 
-pa2_in01,19,107,3	script	Bounty Board Gef 101-150#gf6	837,{
+pa2_in01,19,107,3	script	Bounty Geffen 101-150#gf6	837,{
 	callfunc "F_Bounty_Board", 101, 150, 2, 1,
 		1267,	62684,	218700,		164025,	// CARAT
 		1208,	62685,	381150,		277425,	// WANDER_MAN

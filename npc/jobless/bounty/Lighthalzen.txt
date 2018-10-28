@@ -18,7 +18,7 @@
 //=			MonsterID, 		QuestID, 	BaseExp, 	JobExp};
 //============================================================
 
-pa2_in01,31,173,3	script	Bounty Board Lz 81-100#lz1	837,{
+pa2_in01,31,173,3	script	Bounty Lighthalzen 81-100#lz1	837,{
 	callfunc "F_Bounty_Board", 81, 100, 9, 1,
 		1613,	62745,	107325,		120825,	// METALING
 		1162,	62746,	131625,		148050,	// RAFFLESIA
@@ -28,7 +28,7 @@ pa2_in01,31,173,3	script	Bounty Board Lz 81-100#lz1	837,{
 	end;
 }
 
-pa2_in01,19,103,3	script	Bounty Board Lz 101-150#lz2	837,{
+pa2_in01,19,103,3	script	Bounty Lighthalzen 101-150#lz2	837,{
 	callfunc "F_Bounty_Board", 101, 150, 4, 1,
 		1133,	62750,	255825,		191925,	// KOBOLD_1
 		1134,	62751,	218700,		164025,	// KOBOLD_2
@@ -37,7 +37,7 @@ pa2_in01,19,103,3	script	Bounty Board Lz 101-150#lz2	837,{
 	end;
 }
 
-pa2_in01,19,101,3	script	Bounty Board Lz 121-175#lz3	837,{
+pa2_in01,19,101,3	script	Bounty Lighthalzen 121-175#lz3	837,{
 	callfunc "F_Bounty_Board", 121, 0, 10, 1,
 		1682,	62754,	424350,		318150,	// REMOVAL
 		1657,	62755,	506250,		503550,	// RAWREL
@@ -49,7 +49,7 @@ pa2_in01,19,101,3	script	Bounty Board Lz 121-175#lz3	837,{
 	end;
 }
 
-pa2_in01,19,99,3	script	Bounty Board Lz 141#lz4	837,{
+pa2_in01,19,99,3	script	Bounty Lighthalzen 141#lz4	837,{
 	callfunc "F_Bounty_Board", 141, 0, 1, 4,
 		1639,	62761,	1516950,	1997550,	// KATRINN
 		1637,	62762,	1736100,	1738912,	// MAGALETA

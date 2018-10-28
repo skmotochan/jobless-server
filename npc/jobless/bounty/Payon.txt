@@ -18,7 +18,7 @@
 //=			MonsterID, 		QuestID, 	BaseExp, 	JobExp};
 //============================================================
 
-pa2_in01,19,177,3	script	Bounty Board Pay 1-20#pay1	837,{
+pa2_in01,19,177,3	script	Bounty Payon 1-20#pay1	837,{
 	callfunc "F_Bounty_Board", 1, 20, 1, 1,
 		1010,	62644,	 6975,		5175,	// WILOW
 		1014,	62565,	13050,		9675,	// SPORE
@@ -26,7 +26,7 @@ pa2_in01,19,177,3	script	Bounty Board Pay 1-20#pay1	837,{
 	end;
 }
 
-pa2_in01,19,179,3	script	Bounty Board Pay 21-50#pay2	837,{
+pa2_in01,19,179,3	script	Bounty Payon 21-50#pay2	837,{
 	callfunc "F_Bounty_Board", 21, 50, 2, 1,
 		1060,	62567,	20250,		22725,	// BIGFOOT
 		1128,	62797,	24300,		27225,	// HORN
@@ -35,7 +35,7 @@ pa2_in01,19,179,3	script	Bounty Board Pay 21-50#pay2	837,{
 	end;
 }
 
-pa2_in01,19,181,3	script	Bounty Board Pay 41-75#pay3	837,{
+pa2_in01,19,181,3	script	Bounty Payon 41-75#pay3	837,{
 	callfunc "F_Bounty_Board", 41, 75, 2, 1,
 		1277,	62569,	54675,		61650,	// GREATEST_GENERAL
 		1013,	62645,	38475,		43425,	// WOLF
@@ -45,7 +45,7 @@ pa2_in01,19,181,3	script	Bounty Board Pay 41-75#pay3	837,{
 	end;
 }
 
-pa2_in01,21,181,3	script	Bounty Board Pay 61-100#pay4	837,{
+pa2_in01,21,181,3	script	Bounty Payon 61-100#pay4	837,{
 	callfunc "F_Bounty_Board", 61, 100, 2, 1,
 		1170,	62648,	66750,		 75150,	// SOHEE
 		1110,	62649,	75900,		 85350,	// DOKEBI

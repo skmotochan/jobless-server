@@ -18,7 +18,7 @@
 //=			MonsterID, 		QuestID, 	BaseExp, 	JobExp};
 //============================================================
 
-pa2_in01,31,177,1	script	Bounty Board Um 40-100#um1	837,{
+pa2_in01,31,177,1	script	Bounty Umbala 40-100#um1	837,{
 	callfunc "F_Bounty_Board", 40, 100, 5, 1,
 		1261,	62609,	 81000,		124875,	// WILD_ROSE
 		1493,	62610,	 94050,		105525,	// DRYAD

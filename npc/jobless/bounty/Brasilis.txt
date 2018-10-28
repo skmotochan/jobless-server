@@ -18,7 +18,7 @@
 //=			MonsterID, 		QuestID, 	BaseExp, 	JobExp};
 //============================================================
 
-pa2_in01,31,97,0	script	Bounty Board Bra 70-175#bra1	837,{
+pa2_in01,31,97,0	script	Bounty Brasilis 70-175#bra1	837,{
 	callfunc "F_Bounty_Board", 70, 0, 8, 3,
 		2074,	62603,	 93300,		 67500,	// CURUPIRA
 		2071,	62604,	151650,		168000,	// HEADLESS_MULE

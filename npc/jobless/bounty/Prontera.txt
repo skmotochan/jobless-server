@@ -18,7 +18,7 @@
 //=			MonsterID, 		QuestID, 	BaseExp, 	JobExp};
 //============================================================
 
-pa2_in01,19,169,3	script	Bounty Board Prt 1-20#prt1	837,{
+pa2_in01,19,169,3	script	Bounty Prontera 1-20#prt1	837,{
 	callfunc "F_Bounty_Board", 1, 20, 3, 1,
 		1004,	62722,	 9000,		 6750,	// HORNET
 		1012,	62723,	10125,		 7650,	// RODA_FROG
@@ -30,7 +30,7 @@ pa2_in01,19,169,3	script	Bounty Board Prt 1-20#prt1	837,{
 	end;
 }
 
-pa2_in01,19,171,3	script	Bounty Board Prt 21-50#prt2	837,{
+pa2_in01,19,171,3	script	Bounty Prontera 21-50#prt2	837,{
 	callfunc "F_Bounty_Board", 21, 50, 4, 1,
 		1051,	62727,	14175,		15975,	// THIEF_BUG
 		1175,	62728,	15075,		17100,	// TAROU
@@ -46,7 +46,7 @@ pa2_in01,19,171,3	script	Bounty Board Prt 21-50#prt2	837,{
 	end;
 }
 
-pa2_in01,19,173,3	script	Bounty Board Prt 41-70#prt3	837,{
+pa2_in01,19,173,3	script	Bounty Prontera 41-70#prt3	837,{
 	callfunc "F_Bounty_Board", 41, 70, 4, 1,
 		1100,	62737,	40500,		45450,	// ARGOS
 		1494,	62738,	50625,		56925,	// KIND_OF_BEETLE
@@ -55,7 +55,7 @@ pa2_in01,19,173,3	script	Bounty Board Prt 41-70#prt3	837,{
 	end;
 }
 
-pa2_in01,19,175,3	script	Bounty Board Prt 61-100#prt4	837,{
+pa2_in01,19,175,3	script	Bounty Prontera 61-100#prt4	837,{
 	callfunc "F_Bounty_Board", 61, 100, 4, 1,
 		1380,	62740,	 66825,		 75150,	// DRILLER
 		1035,	62741,	 67950,		 76500,	// HUNTER_FLY
