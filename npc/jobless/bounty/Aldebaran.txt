@@ -18,7 +18,7 @@
 //=			MonsterID, 		QuestID, 	BaseExp, 	JobExp};
 //============================================================
 
-aldebaran,144,128,3	script	Bounty Board#al1	837,{
+pa2_in01,25,97,3	script	Bounty Board Ald 140#al1	837,{
 	callfunc "F_Bounty_Board", 140, 0, 1, 5,
 		2479,	62890,		 622800,	 529650,	// NG_MIMIC
 		2478,	62891,		1181250,	1782000,	// NG_RIDEWORD

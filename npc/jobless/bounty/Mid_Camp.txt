@@ -18,7 +18,7 @@
 //=			MonsterID, 		QuestID, 	BaseExp, 	JobExp};
 //============================================================
 
-mid_camp,182,253,0	script	Bounty Board 100-150#mc1	837,{
+pa2_in01,23,97,0	script	Bounty Board 100-150#mc1	837,{
 	callfunc "F_Bounty_Board", 100, 150, 11, 2,
 		1995,	62806,		249750,		186975,	// PINGUICULA
 		2015,	62807,		236250,		272100,	// PINGUICULA_D

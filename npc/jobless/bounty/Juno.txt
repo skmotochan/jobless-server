@@ -18,7 +18,7 @@
 //=			MonsterID, 		QuestID, 	BaseExp, 	JobExp};
 //============================================================
 
-yuno,180,145,0	script	Bounty Board 70-110#jn1	837,{
+pa2_in01,31,175,0	script	Bounty Board Jun 70-110#jn1	837,{
 	callfunc "F_Bounty_Board", 70, 110, 7, 1,
 		1372,	62556,	119812,		134662,	// GOAT
 		1376,	62557,	135112,		151762,	// HARPY
@@ -27,7 +27,7 @@ yuno,180,145,0	script	Bounty Board 70-110#jn1	837,{
 	end;
 }
 
-yuno,182,145,0	script	Bounty Board 101-150#jn2	837,{
+pa2_in01,19,107,0	script	Bounty Board Jun 101-150#jn2	837,{
 	callfunc "F_Bounty_Board", 101, 150, 7, 1,
 		1385,	62710,	236025,		177075,	// DELETER_
 		1384,	62711,	236025,		177075,	// DELETER
