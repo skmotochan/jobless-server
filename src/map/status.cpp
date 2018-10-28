@@ -9525,7 +9525,8 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 			val2 = 2 + val1; // Agi change
 			break;
 		case SC_ENDURE:
-			val2 = 7; // Hit-count [Celest]
+			//val2 = 7; // Hit-count [Celest]
+			val2 = 30; // Hit-count [Jobless]
 			if( !(flag&SCSTART_NOAVOID) && (bl->type&(BL_PC|BL_MER)) && !map_flag_gvg2(bl->m) && !map_getmapflag(bl->m, MF_BATTLEGROUND) && !val4 ) {
 				struct map_session_data *tsd;
 				if( sd ) {
