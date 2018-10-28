@@ -15,7 +15,7 @@ pincode_enabled: no
 //====================
 start_point: payo2,90,123
 start_point_doram: payo2,90,105
-start_items: 1201,1,2:2301,1,16:11567,50,0:12323,10,0:12900,1,0
+start_items: 1201,1,2:2301,1,16
 start_items_doram: 1681,1,2:2301,1,16
 start_zeny: 0
 guild_exp_rate: 100
