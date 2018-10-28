@@ -58,7 +58,7 @@ pa2_in01,29,181,3	script	Bounty Geffen 61-100#gf4	837,{
 	end;
 }
 
-pa2_in01,74,79,3	script	Bounty Geffen 81-120#gf5	837,{
+pa2_in01,19,109,3	script	Bounty Geffen 81-120#gf5	837,{
 	callfunc "F_Bounty_Board", 81, 120, 2, 1,
 		1109,	62675,	203175,		243675,	// DEVIRUCHI
 		1143,	62676,	162225,		225900,	// MARIONETTE
