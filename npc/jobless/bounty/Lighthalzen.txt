@@ -18,7 +18,7 @@
 //=			MonsterID, 		QuestID, 	BaseExp, 	JobExp};
 //============================================================
 
-pa2_in01,19,105,3	script	Bounty Board Lz 81-100#lz1	837,{
+pa2_in01,31,173,3	script	Bounty Board Lz 81-100#lz1	837,{
 	callfunc "F_Bounty_Board", 81, 100, 9, 1,
 		1613,	62745,	107325,		120825,	// METALING
 		1162,	62746,	131625,		148050,	// RAFFLESIA

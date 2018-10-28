@@ -72,7 +72,7 @@ pa2_in01,74,79,3	script	Bounty Board Gef 81-120#gf5	837,{
 	end;
 }
 
-pa2_in01,19,109,3	script	Bounty Board Gef 101-150#gf6	837,{
+pa2_in01,19,107,3	script	Bounty Board Gef 101-150#gf6	837,{
 	callfunc "F_Bounty_Board", 101, 150, 2, 1,
 		1267,	62684,	218700,		164025,	// CARAT
 		1208,	62685,	381150,		277425,	// WANDER_MAN
