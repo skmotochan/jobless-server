@@ -76,13 +76,13 @@ drops_by_luk2: 20
 finding_ore_rate: 100
 
 //====================exp====================
-base_exp_rate: 100000
-job_exp_rate: 100000
+base_exp_rate: 50000
+job_exp_rate: 50000
 multi_level_up: yes
 exp_bonus_attacker: 100
 exp_bonus_max_attacker: 12
-mvp_exp_rate: 100000
-quest_exp_rate: 100000
+mvp_exp_rate: 50000
+quest_exp_rate: 500000
 pvp_exp: yes
 death_penalty_type: 0
 
