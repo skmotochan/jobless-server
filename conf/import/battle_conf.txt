@@ -82,7 +82,7 @@ multi_level_up: yes
 exp_bonus_attacker: 100
 exp_bonus_max_attacker: 12
 mvp_exp_rate: 50000
-quest_exp_rate: 500000
+quest_exp_rate: 200000
 pvp_exp: yes
 death_penalty_type: 0
 
