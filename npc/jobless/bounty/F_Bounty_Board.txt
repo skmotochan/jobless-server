@@ -73,12 +73,12 @@ function	script	F_Bounty_Board	{
 				.@HuntAllList$ = .@HuntAllList$ + (.@i+4 > getargcount()?" and ":(.@i > 5?", ":"")) + getmonsterinfo(getarg(.@i-1),MOB_NAME);
 			}
 			mes "[Bounty Board]";
-			mes "There is a bounty to hunt 150 " + .@HuntAllList$ + " hunt them all.";
+			mes "There is a bounty to hunt 50 " + .@HuntAllList$ + " hunt them all.";
 			close;
 		}
 		.@monster$ = getmonsterinfo(getarg(.@bounty-1),MOB_NAME);
 		mes "[Bounty Board]";
-		mes "There is a bounty to hunt 150 " + .@monster$ + ".";
+		mes "There is a bounty to hunt 50 " + .@monster$ + ".";
 		next;
 		if (select("I'll do it.", "Uhh actually nevermind.") == 1){
 			if (checkquest(getarg(.@bounty),HUNTING) == -1)
